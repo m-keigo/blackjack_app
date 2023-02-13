@@ -1,0 +1,162 @@
+* *::after *::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #005c4c;
+}
+
+.container {
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    width: 80%;
+    border: 8px double #4d342b;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* タイトル文字（BlackJack）装飾 */
+h1 {
+    color: goldenrod;
+    letter-spacing: 0.1em;
+}
+
+/* スコア表装飾 */
+table, th, td {
+    border-collapse:collapse;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+}
+
+#win-header {
+    background-color: #00008b;
+}
+
+#lose-header {
+    background-color: maroon;
+}
+
+#draw-header {
+    background-color: goldenrod;
+}
+
+/* トランプカード表示処理 */
+ul.card-slot {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    height: 210px;
+    width: 150px;
+    margin: 0 10px;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    background-color: white;
+}
+
+.card.red {
+    color: red;
+}
+
+.card.black {
+    color: black;
+}
+
+.card::before,
+.card::after {
+    position: absolute;
+    content: attr(data-value);
+    font-size: 1rem;
+}
+
+.card::before {
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+.card::after {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    transform: rotate(180deg);
+}
+
+/* ボタン装飾 */
+.btn {
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffc107;
+    box-shadow: 2px 2px darkgoldenrod;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.btn:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+.btn:active {
+    box-shadow: none;
+    transform: translate(2px, 2px);
+}
+
+/* 400pxまでの幅の場合に適応される */
+@media screen and (max-width: 400px) {
+    .container {
+        width: 95%;
+    }
+
+    .card {
+        height: 140px;
+        width: 100px;
+        font-size: 2.5rem;
+    }
+}
+
+/* 400～800pxまでの幅の場合に適応される */
+@media screen and (min-width: 400px) and (max-width: 800px) {
+    .container {
+        width: 90%;
+    }
+
+    .card {
+        height: 168px;
+        width: 125px;
+        font-size: 3.5rem;
+    }
+}
+
+/* 1280px以上の幅の場合に適応される */
+@media screen and (min-width: 1280px) {
+    .container {
+        width: 80%;
+    }
+
+    .card {
+        height: 280px;
+        width: 200px;
+        font-size: 5rem;
+    }
+
+    .card::before,
+    .card::after {
+        font-size: 1.5rem;
+    }
+}

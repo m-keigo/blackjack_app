@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blacljack</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+        <h1>BlackJack</h1>
+        <div class="flex row1">
+            <table>
+                <tr>
+                    <th id="win-header">Wins</th>
+                    <th id="lose-header">Loses</th>
+                    <th id="draw-header">Draws</th>
+                </tr>
+                <tr>
+                    <td><span id="wins">0</span></td>
+                    <td><span id="loses">0</span></td>
+                    <td><span id="draws">0</span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="dealer-box">
+            <ul class="card-slot dealer"></ul>
+            <h2>Dealer : <span id="dealer-result">0</span></h2>
+        </div>
+        <div id="your-box">
+            <h2>You : <span id="your-result">0</span></h2>
+            <ul class="card-slot you"></ul>
+        </div>
+        <div class="flex row2">
+            <div>
+                <button class="btn" id="hit-button">Hit</button>
+                <button class="btn" id="stand-button">Stand</button>
+                <button class="btn" id="deal-button" disabled>Deal</button>
+                <button class="btn" id="restart-button" disabled>Restart</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
